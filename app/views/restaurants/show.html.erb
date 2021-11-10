@@ -1,0 +1,14 @@
+<div class= "container p-3">
+  <h1><%= @restaurant.name %></h1>
+  <div class = "d-flex flex-columnn">
+    <p><%= @restaurant.address%></p>
+    <p><%= @restaurant.category.capitalize %></p>
+  </div>
+    <%= link_to "Add review", new_restaurant_review_path(@restaurant) %>
+
+  <h4>Reviews:</h4>
+  <% @restaurant.reviews.each do |review| %>
+  <p><%= review.content %></p>
+  <p><%= review.rating %></p>
+ <% end %>
+</div>
